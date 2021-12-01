@@ -40,6 +40,8 @@ for i=2:n
     y(i,1) = y(i-1,1) + vc(i,1)*sind(ang(1))*h;
     
     if m(i,1)<mb
+        x_cambio=x(i-1,1);
+        y_cambio=y(i-1,1);
         break
     end
 end
@@ -76,6 +78,8 @@ for i =(i+1):n
 end
 
 % CÓDIGO TRAZA LA TRAYECTORIA
+% hold on
+% plot(x_cambio, y_cambio,'o')
 comet(x,y)                      % Graficar trayectoria
 fprintf("\nDesplazamiento en x recorrida: %.2f m",(x(end-1)))
 try 
